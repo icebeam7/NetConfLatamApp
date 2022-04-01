@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetConfLatamApp.Views.AttendeesDetailView"
+             Title="{Binding CurrentItem.Name, StringFormat='{0} sessions'}">
+    <ContentPage.Content>
+        <Grid Margin="10">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                               WidthRequest="30"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HeightRequest="30"/>
+
+            <CollectionView ItemsSource="{Binding SubItems}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Margin="5" Spacing="5">
+                            <Label Text="{Binding Name}"
+                                   FontSize="Large"
+                                   TextColor="Blue"/>
+                            <Label Text="{Binding Date}"
+                                   TextColor="Green"
+                                   FontSize="Medium"/>
+                            <Label Text="{Binding StartTime}"
+                                   TextColor="Orange"
+                                   FontSize="Small"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

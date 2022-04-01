@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:NetConfLatamApp.Views"
+    x:Class="NetConfLatamApp.Views.SessionsListView"
+             Title="Sessions">
+    <ContentPage.Content>
+        <Grid Margin="10">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                               WidthRequest="30"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HeightRequest="30"/>
+
+            <CollectionView ItemsSource="{Binding DataCollection}"
+                            SelectedItem="{Binding SelectedData}"
+                            SelectionChangedCommand="{Binding GoToDetailCommand}"
+                            SelectionChangedCommandParameter="{x:Type local:SessionsDetailView}"
+                            SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="5" 
+                              ColumnSpacing="5"
+                              RowSpacing="5">
+                            <Label Text="{Binding Name}"
+                                   FontSize="Large"
+                                   TextColor="Green"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

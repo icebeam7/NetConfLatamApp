@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetConfLatamApp.Views.SessionsDetailView"
+             Title="{Binding CurrentItem.Name}">
+    <ContentPage.Content>
+        <StackLayout Spacing="5" Margin="5">
+            <Label Text="Date" />
+            <Label Text="{Binding CurrentItem.Date}"
+                   TextColor="Green"
+                   FontSize="Large"/>
+
+            <Label Text="Start Time" />
+            <Label Text="{Binding CurrentItem.StartTime}"
+                   TextColor="Blue"
+                   FontSize="Medium"/>
+
+            <Label Text="End Time" />
+            <Label Text="{Binding CurrentItem.EndTime}"
+                   TextColor="Orange"
+                   FontSize="Small"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
